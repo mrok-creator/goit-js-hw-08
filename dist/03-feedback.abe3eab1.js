@@ -601,6 +601,19 @@ function getToLocalSTorage(key = 'feedback - form - state') {
 
   return;
 }
+
+ref.parent.addEventListener('submit', onSubmitInit);
+
+function onSubmitInit(event) {
+  event.preventDefault();
+  const stringData = localStorage.getItem('feedback - form - state');
+
+  if (stringData) {
+    console.log(JSON.parse(stringData));
+    ref.parent.reset();
+    localStorage.removeItem('feedback - form - state');
+  }
+}
 },{"lodash.throttle":"../node_modules/lodash.throttle/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
