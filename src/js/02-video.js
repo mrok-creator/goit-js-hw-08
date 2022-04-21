@@ -16,6 +16,8 @@ function onPlayFixTime(data, key = 'videoplayer-current-time') {
 
 function getSavedTime() {
   const strData = localStorage.getItem('videoplayer-current-time');
+  console.log(strData);
+  if (!strData) return 0;
   const obj = JSON.parse(strData);
   return obj.seconds;
 }

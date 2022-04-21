@@ -3120,6 +3120,8 @@ function onPlayFixTime(data, key = 'videoplayer-current-time') {
 
 function getSavedTime() {
   const strData = localStorage.getItem('videoplayer-current-time');
+  console.log(strData);
+  if (!strData) return 0;
   const obj = JSON.parse(strData);
   return obj.seconds;
 }
@@ -3153,7 +3155,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35905" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41765" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
